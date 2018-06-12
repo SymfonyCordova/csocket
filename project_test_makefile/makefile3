@@ -1,0 +1,9 @@
+obj=main.o add.o sub.o mul.o
+target=app
+#makefile中自己维护的变量一般是大写
+CC = gcc
+CPPFLAGS = -I
+$(target):$(obj)
+	$(CC) $(obj) -o $(target)
+%.o:%.c
+	$(CC) -c $< -o $@
